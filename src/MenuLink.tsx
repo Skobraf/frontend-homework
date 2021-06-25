@@ -4,12 +4,11 @@ type Props = {
 }
 
 const MenuLink = ({ icon, text }: Props) => (
-  <div>
-    <i className="material-icons">
+  <div className="list-item"> 
+    <i className="material-icons" >
       {icon}
     </i>
-
-    {text}
+    <p className="item-text">{text}</p>
   </div>
 )
 
