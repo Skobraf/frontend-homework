@@ -1,15 +1,14 @@
 type Props = {
-  text: string,
-  icon: string,
-}
+  text: string;
+  icon: string;
+  toggleDropdownMenuVisibility?: () => void;
+};
 
-const MenuLink = ({ icon, text }: Props) => (
-  <div className="list-item"> 
-    <i className="material-icons" >
-      {icon}
-    </i>
+const MenuLink = ({ icon, text, toggleDropdownMenuVisibility }: Props) => (
+  <div className="list-item" onClick={toggleDropdownMenuVisibility}>
+    <i className="material-icons">{icon}</i>
     <p className="item-text">{text}</p>
   </div>
-)
+);
 
-export default MenuLink
+export default MenuLink;

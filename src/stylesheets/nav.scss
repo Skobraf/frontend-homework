@@ -1,24 +1,23 @@
 .nav {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
+  align-items: flex-end;
+  margin-left: auto;
+  flex-direction: column;
   padding: 16px;
 }
 
 .nav__link {
   display: flex;
-  align-items: center;
-  max-width: 280px;
+  margin-left: auto;
+  align-items: flex-end;
+  justify-content: flex-end;
   padding: 8px;
-
   border-radius: 8px;
-
   cursor: pointer;
-
   transition: 100ms background-color;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $grey-2;
   }
 
@@ -41,4 +40,54 @@
 
 .nav__link-icon {
   margin-left: 8px;
+}
+
+.sub-list-container {
+  position: relative;
+  overflow: hidden;
+  width: 304px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid #dcdce0;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px rgba(51, 51, 51, 0.24);
+  border-radius: 8px;
+}
+.list-item {
+  padding-top: 14px;
+  height: 34px;
+  display: flex;
+  cursor: pointer;
+  padding-left: 22px;
+  width: 100%;
+  &:hover,
+  &:focus {
+    background-color: $grey-1;
+  }
+
+  &:active {
+    background-color: $soft-green;
+  }
+  .item-text {
+    margin-left: 5px;
+    position: relative;
+    bottom: 7px;
+  }
+}
+.active-item {
+  background: $soft-green;
+  justify-content: space-between;
+  color: $dark-green;
+  .icon {
+    margin-right: 30px;
+    font-size: 16px;
+    color: $dark-green;
+  }
+  &:hover,
+  &:focus {
+    background-color: $soft-green;
+  }
 }

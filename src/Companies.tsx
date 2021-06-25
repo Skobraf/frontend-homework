@@ -1,25 +1,42 @@
-import { connect } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-import { ReduxState, Company } from './types'
-import { getCompanies } from './selectors'
+import { ReduxState, Company } from "./types";
+import { getCompanies, getSingleCompany } from "./selectors";
+import { setSelectedCompanyId, toggleDropdownMenuVisibility } from "./actions";
 
-import CompanyLink from './CompanyLink'
+import CompanyLink from "./CompanyLink";
 
 type ReduxProps = {
-  companies: Array<Company>,
-}
+  companies: Array<Company>;
+  singleCompany:Company[];
+};
 
-export const Companies = ({ companies }: ReduxProps) => (
+type DispatchProps = {
+  setSelectedCompanyId:(id:number) => void;
+  toggleDropdownMenuVisibility: () => void;
+};
+
+export const Companies = ({ companies,  setSelectedCompanyId, toggleDropdownMenuVisibility, singleCompany }: ReduxProps & DispatchProps) => (
   <>
-    <div>Your companies</div>
+    <div className="list-item" onClick={toggleDropdownMenuVisibility}>Your companies</div>
 
-    {companies.map((company) => <CompanyLink key={company.id} {...company} />)}
+    {companies.map((company) => (
+      <CompanyLink
+        key={company.id}
+        {...company}
+        setSelectedCompanyId={setSelectedCompanyId}
+        toggleDropdownMenuVisibility={toggleDropdownMenuVisibility}
+        singleCompany={singleCompany}
+      />
+    ))}
   </>
-)
+);
 
 export default connect(
   createStructuredSelector<ReduxState, ReduxProps>({
     companies: getCompanies,
-  })
-)(Companies)
+    singleCompany:getSingleCompany
+  }),
+  { setSelectedCompanyId, toggleDropdownMenuVisibility }
+)(Companies);

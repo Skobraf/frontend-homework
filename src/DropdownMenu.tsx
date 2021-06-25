@@ -1,39 +1,26 @@
-import MenuLink from './MenuLink'
-import Companies from './Companies'
+import MenuLink from "./MenuLink";
+import Companies from "./Companies";
 
-const DropdownMenu = () => (
-  <div>
-    <Companies />
+type DispatchProps = {
+  toggleDropdownMenuVisibility: () => void;
+};
 
-    <div>
-      <MenuLink
-        text="Get the mobile app"
-        icon="phone_iphone"
-      />
+const DropdownMenu = ({toggleDropdownMenuVisibility}:DispatchProps) => {
 
-      <MenuLink
-        text="Community"
-        icon="people"
-      />
+  return (
+    <div className="sub-list-container" >
+      <Companies />
+        <MenuLink text="Get the mobile app" icon="phone_iphone" />
 
-      <MenuLink
-        text="Knowledge base"
-        icon="book"
-      />
+        <MenuLink text="Community" icon="people" toggleDropdownMenuVisibility={toggleDropdownMenuVisibility} />
+
+        <MenuLink text="Knowledge base" icon="book" toggleDropdownMenuVisibility={toggleDropdownMenuVisibility} />
+
+        <MenuLink text="Settings" icon="settings " toggleDropdownMenuVisibility={toggleDropdownMenuVisibility} />
+
+        <MenuLink text="Log out" icon="exit_to_app" toggleDropdownMenuVisibility={toggleDropdownMenuVisibility} />
     </div>
+  );
+};
 
-    <div>
-      <MenuLink
-        text="Settings"
-        icon="settings"
-      />
-
-      <MenuLink
-        text="Log out"
-        icon="exit_to_app"
-      />
-    </div>
-  </div>
-)
-
-export default DropdownMenu
+export default DropdownMenu;
