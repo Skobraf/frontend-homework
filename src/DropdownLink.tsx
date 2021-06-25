@@ -47,7 +47,6 @@ export const DropdownLink = ({
     toggleDropdownMenuVisibility,
     isDropdownMenuVisible
   );
-
   return (
     <>
       <div ref={wrapperRef}>
@@ -59,7 +58,7 @@ export const DropdownLink = ({
           <div className="nav__link-text-wrapper">
             <div className="nav__link-text">Elon Musk</div>
 
-            <div className="nav__link-subtext">{singleCompany[0]?.name}</div>
+            <div className="nav__link-subtext">{singleCompany[0]?.name ?? ''}</div>
           </div>
 
           <i className="material-icons-outlined nav__link-icon">settings</i>

@@ -3,10 +3,11 @@ import { DropdownLink } from './DropdownLink'
 
 describe('<DropdownLink />', () => {
   const toggleDropdownMenuVisibilityMock = jest.fn()
-
+  const singleCompany = [ {name:'first company'}]
   const render = (props) => shallow(
     <DropdownLink
       toggleDropdownMenuVisibility={toggleDropdownMenuVisibilityMock}
+      singleCompany={singleCompany}
       {...props}  
     />
   )
@@ -26,3 +27,4 @@ describe('<DropdownLink />', () => {
     expect(toggleDropdownMenuVisibilityMock).toHaveBeenCalled()
   })
 })
+ 

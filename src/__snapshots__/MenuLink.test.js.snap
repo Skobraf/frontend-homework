@@ -1,12 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MenuLink /> renders link 1`] = `
-<div>
+<div
+  className="list-item"
+>
   <i
     className="material-icons"
   >
     phone
   </i>
-  Call me
+  <p
+    className="item-text"
+  >
+    Call me
+  </p>
 </div>
 `;

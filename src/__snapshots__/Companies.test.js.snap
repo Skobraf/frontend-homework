@@ -2,18 +2,34 @@
 
 exports[`<Companies /> renders list of company links 1`] = `
 <Fragment>
-  <div>
+  <div
+    className="list-item"
+  >
     Your companies
   </div>
   <CompanyLink
     id={1}
     key="1"
     name="Dummy company"
+    singleCompany={
+      Array [
+        Object {
+          "name": "first company",
+        },
+      ]
+    }
   />
   <CompanyLink
     id={2}
     key="2"
     name="Smarty company"
+    singleCompany={
+      Array [
+        Object {
+          "name": "first company",
+        },
+      ]
+    }
   />
 </Fragment>
 `;

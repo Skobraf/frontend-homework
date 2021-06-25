@@ -2,61 +2,67 @@
 
 exports[`<DropdownLink /> renders with dropdown menu 1`] = `
 <Fragment>
-  <div
-    className="nav__link"
-    data-test-nav-link={true}
-    onClick={[MockFunction]}
-  >
+  <div>
     <div
-      className="nav__link-text-wrapper"
+      className="nav__link"
+      data-test-nav-link={true}
+      onClick={[MockFunction]}
     >
       <div
-        className="nav__link-text"
+        className="nav__link-text-wrapper"
       >
-        Elon Musk
+        <div
+          className="nav__link-text"
+        >
+          Elon Musk
+        </div>
+        <div
+          className="nav__link-subtext"
+        >
+          first company
+        </div>
       </div>
-      <div
-        className="nav__link-subtext"
+      <i
+        className="material-icons-outlined nav__link-icon"
       >
-        Viljatootja AS
-      </div>
+        settings
+      </i>
     </div>
-    <i
-      className="material-icons-outlined nav__link-icon"
-    >
-      settings
-    </i>
+    <DropdownMenu
+      toggleDropdownMenuVisibility={[MockFunction]}
+    />
   </div>
-  <DropdownMenu />
 </Fragment>
 `;
 
 exports[`<DropdownLink /> renders without dropdown menu 1`] = `
 <Fragment>
-  <div
-    className="nav__link"
-    data-test-nav-link={true}
-    onClick={[MockFunction]}
-  >
+  <div>
     <div
-      className="nav__link-text-wrapper"
+      className="nav__link"
+      data-test-nav-link={true}
+      onClick={[MockFunction]}
     >
       <div
-        className="nav__link-text"
+        className="nav__link-text-wrapper"
       >
-        Elon Musk
+        <div
+          className="nav__link-text"
+        >
+          Elon Musk
+        </div>
+        <div
+          className="nav__link-subtext"
+        >
+          first company
+        </div>
       </div>
-      <div
-        className="nav__link-subtext"
+      <i
+        className="material-icons-outlined nav__link-icon"
       >
-        Viljatootja AS
-      </div>
+        settings
+      </i>
     </div>
-    <i
-      className="material-icons-outlined nav__link-icon"
-    >
-      settings
-    </i>
   </div>
 </Fragment>
 `;
